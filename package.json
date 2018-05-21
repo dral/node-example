@@ -2,15 +2,28 @@
   "name": "example",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "node build",
+    "start": "nodemon src/index.js --exec babel-node --inspect",
+    "babel-node": "babel-node",
+    "build": "babel src --source-maps -d build",
+    "test": "jest",
+    "test-watch": "jest --watch"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "4.16.3",
+    "pug": "2.0.3"
+  },
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-plugin-transform-object-rest-spread": "6.26.0",
+    "babel-preset-env": "1.7.0",
+    "eslint": "4.19.1",
+    "eslint-plugin-jest": "21.15.1",
+    "jest": "22.4.4",
     "nodemon": "1.17.4"
   }
 }
