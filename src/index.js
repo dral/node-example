@@ -8,7 +8,7 @@ app.get('/', function (req, res) {
   res.send('Hello World!');
 });
 
-app.get('/david', function (req, res) {
+app.get('/hello', function (req, res) {
   res.render('test.pug', req.query);
 });
 
